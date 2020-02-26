@@ -1,4 +1,4 @@
-# requirements
+requirements：
 1. Well-structure maven project
 2. Proper unit test with high test coverage
 3. Consider OO with proper design pattern
