@@ -47,6 +47,12 @@ public class WordBreakService {
 		return result;
 	}
 
+	/**
+	 * Given a valid sentence without any spaces between the words and a dictionary of valid English words, 
+	 * find all possible ways to break the sentence in individual dictionary words
+	 * @param s
+	 * @return
+	 */
 	public List<String> wordBreak(String s) {
 		List<String> wordDict = Arrays.asList(new Dictionary().getDict());
 		wordDict.forEach(word -> {
@@ -56,6 +62,13 @@ public class WordBreakService {
 		return calculateResult(s, 0);
 	}
 
+	/**
+	 * If user provide a customized dictionary of valid English words as additional input, 
+	 * and the program will only find in the user customized dictionary
+	 * @param s
+	 * @param custdict
+	 * @return
+	 */
 	public List<String> wordBreak(String s, String[] custdict) {
 		List<String> wordDict = Arrays.asList(custdict);
 		wordDict.forEach(word -> {
@@ -65,6 +78,14 @@ public class WordBreakService {
 		return calculateResult(s, 0);
 	}
 
+	/**
+	 * If user provide a customized dictionary of valid English words as additional input, 
+	 * and the program will find all the valid words in the both dictionaries
+	 * @param s
+	 * @param dicttype
+	 * @param custdict
+	 * @return
+	 */
 	public List<String> wordBreak(String s, String dicttype, String[] custdict) {
 		List<String> dict = Arrays.asList(new Dictionary().getDict());
 		List<String> cust_dict = Arrays.asList(custdict);
