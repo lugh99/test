@@ -17,7 +17,7 @@ public class WordBreakService {
 
 	private int maxLength = -1;
 	private Set<String> wordSet = new HashSet<>();
-	private Map<Integer, List<String>> mapPosToStrings = new HashMap<>();
+	private Map<Integer, List<String>> map = new HashMap<>();
 
 	public List<String> calculateResult(String s, int currentPos) {
 		if (currentPos == s.length()) {
@@ -25,11 +25,11 @@ public class WordBreakService {
 			result.add("");
 			return result;
 		}
-		if (mapPosToStrings.containsKey(currentPos)) {
-			return mapPosToStrings.get(currentPos);
+		if (map.containsKey(currentPos)) {
+			return map.get(currentPos);
 		}
 		List<String> result = new ArrayList<>();
-		mapPosToStrings.put(currentPos, result);
+		map.put(currentPos, result);
 
 		for (int i = 1; i <= maxLength && currentPos + i <= s.length(); i++) {
 			String subString = s.substring(currentPos, currentPos + i);
