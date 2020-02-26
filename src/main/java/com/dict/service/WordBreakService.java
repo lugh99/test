@@ -55,7 +55,7 @@ public class WordBreakService {
 		});
 		return calculateResult(s, 0);
 	}
-	
+
 	public List<String> wordBreak(String s, String[] custdict) {
 		List<String> wordDict = Arrays.asList(custdict);
 		wordDict.forEach(word -> {
@@ -64,16 +64,14 @@ public class WordBreakService {
 		});
 		return calculateResult(s, 0);
 	}
-	
+
 	public List<String> wordBreak(String s, String dicttype, String[] custdict) {
 		List<String> dict = Arrays.asList(new Dictionary().getDict());
 		List<String> cust_dict = Arrays.asList(custdict);
-		//distinct the dictionary
-		List<String> wordDict = Stream.of(dict, cust_dict)
-                .flatMap(Collection::stream)
-                .distinct()
-                .collect(Collectors.toList());
-		
+		// distinct the dictionary
+		List<String> wordDict = Stream.of(dict, cust_dict).flatMap(Collection::stream).distinct()
+				.collect(Collectors.toList());
+
 		wordDict.forEach(word -> {
 			wordSet.add(word);
 			maxLength = Math.max(maxLength, word.length());
