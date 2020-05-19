@@ -1,4 +1,4 @@
-package com.elevator.manager;
+package com.elevator.controller;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -23,7 +23,7 @@ import com.elevator.service.imp.ElevatorServiceImp;
  * @author lugh
  * @date 2020-05-19
  */
-public class ManagerUI extends JFrame implements Runnable {
+public class ElevatorController extends JFrame implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 	private int floorCnt;
@@ -43,7 +43,7 @@ public class ManagerUI extends JFrame implements Runnable {
 	/**
 	 * This is the default constructor
 	 */
-	public ManagerUI(int floorCnt, int elevatorCnt) {
+	public ElevatorController(int floorCnt, int elevatorCnt) {
 		this.floorCnt = floorCnt;
 		this.elevatorCnt = elevatorCnt;
 		initialize();
