@@ -8,7 +8,7 @@
     │  └─Elevator 电梯实体类
     │
     ├─manager 管理界面包
-    │  ├─ManagerUI 管理界面UI类
+    │  └─ManagerUI 管理界面UI类
     │
     ├─service 请求访问模块
     │  ├─ElevatorService 电梯接口类
