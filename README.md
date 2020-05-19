@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 1、项目目录架构：
 =
     Elevator
@@ -16,9 +15,6 @@
     └─ElevatorApplication 主程序启动类
 2、应用算法原理：
 =
-=======
-1、应用算法原理：
->>>>>>> cd398b6ac641cbcd8199e971a33e396a9f0ae0af
     实现时把电梯分为五个状态：
      1：静止态（Still）
      2:上升状态以及下一个状态为上升状态（Direction==Up && Next_Direction ==Up）
@@ -30,7 +26,6 @@
     如果没有满足5状态的电梯那么从1态以及2态的电梯中选择一个离请求楼层最近的电梯去到达请求楼层。
     如果目前有一楼层请求Down，那么先判断是否有电梯满足5态以及请求楼层小于电梯目的楼层，那么从这些电梯中选择离请求楼层最近的电梯去到达请求楼层；
     如果没有满足的电梯那么从1态以及3态中选择一个离请求楼层最近的电梯去到达请求楼层。
-<<<<<<< HEAD
 3、测试程序：
 =
     1）直接运行主程序类：ElevatorApplication.java
@@ -38,9 +33,3 @@
 4、运行效果预览：
 =
     ![image](https://github.com/lugh99/test/tree/master/src/main/resources/img/elevator.png)
-=======
-2、测试程序：
-    1）直接运行主程序类：ElevatorApplication.java
-    2) 命令执行已经打好的jar包，在resources/jar下面，执行命令：java -jar 目录/elevator.jar
-3、项目文档结构如下：
->>>>>>> cd398b6ac641cbcd8199e971a33e396a9f0ae0af
