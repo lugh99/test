@@ -1,7 +1,5 @@
-实现思路：
-	使用java的swing实现的界面。
-	界面中的电梯使用Button来实现，电梯的移动使用Button的背景颜色改变来实现，电梯的开门，关门也是使用Button的背景颜色改变来实现。
-	此电梯项目中，每个电梯都是一个线程，当主线程启动时每个电梯elevator线程以及调度manager线程都启动。
+对象图预览：
+    ![image](https://github.com/lugh99/test/blob/master/ElevatorObjectDiagram.jpg)
 运行效果预览：
     ![image](https://github.com/lugh99/test/blob/master/elevator.png)
 	
