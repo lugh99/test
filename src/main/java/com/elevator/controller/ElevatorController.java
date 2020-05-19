@@ -15,7 +15,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
 import com.elevator.entity.Elevator;
+import com.elevator.service.DoorService;
 import com.elevator.service.ElevatorService;
+import com.elevator.service.imp.DoorServiceImp;
 import com.elevator.service.imp.ElevatorServiceImp;
 
 /**
@@ -23,7 +25,7 @@ import com.elevator.service.imp.ElevatorServiceImp;
  * @author lugh
  * @date 2020-05-19
  */
-public class ElevatorController extends JFrame implements Runnable {
+public class ElevatorController extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private int floorCnt;
@@ -38,8 +40,45 @@ public class ElevatorController extends JFrame implements Runnable {
 	private Thread thread;
 	private JLabel jlabel, jlabel1;
 	
+	private Elevator el;
+	private int elFloor;
 	private ElevatorService elevatorService =  new ElevatorServiceImp();
+	private DoorService doorService =  new DoorServiceImp();
 
+	public void runElevator(){
+		thread = new Thread(new Runnable(){
+			@Override
+			public void run() {
+				while (true) {
+					for (int i = 0; i < floorCnt; i++) {
+						if (UpState[i]) {
+							el = elevatorService.ManageUpElevator(i, elevator, UpState, floorCnt, elevatorCnt);
+							elFloor = i;
+						}
+						
+						if (DownState[i]) {
+							el = elevatorService.ManageDownElevator(i, elevator, DownState, floorCnt, elevatorCnt);
+							elFloor = i;
+						}
+					}
+				}
+			} 
+			
+		});
+		thread.start();
+	}
+	
+	/**
+	 * open the elevator door
+	 */
+	public void OpenDoor(){
+		doorService.openDoor(el, elFloor);
+	}
+	
+	public void closeDoor(){
+		doorService.closeDoor(el, elFloor);
+	}
+	
 	/**
 	 * This is the default constructor
 	 */
@@ -47,7 +86,6 @@ public class ElevatorController extends JFrame implements Runnable {
 		this.floorCnt = floorCnt;
 		this.elevatorCnt = elevatorCnt;
 		initialize();
-		thread.start();
 	}
 
 	/**
@@ -65,7 +103,7 @@ public class ElevatorController extends JFrame implements Runnable {
 		this.setSize(944, 573);
 		this.setContentPane(getJContainPanel());
 		this.setTitle("The elevator controller");
-		thread = new Thread(this);
+//		thread = new Thread(this);
 		for (int i = 0; i < floorCnt; i++) {
 			UpState[i] = false;
 			DownState[i] = false;
@@ -153,20 +191,20 @@ public class ElevatorController extends JFrame implements Runnable {
 		}
 	}
 
-	@Override
-	public void run() {
-		while (true) {
-			for (int i = 0; i < floorCnt; i++) {
-				if (UpState[i]) {
-					elevatorService.ManageUpElevator(i, elevator, UpState, floorCnt, elevatorCnt);
-				}
-				
-				if (DownState[i]) {
-					elevatorService.ManageDownElevator(i, elevator, DownState, floorCnt, elevatorCnt);
-				}
-			}
-		}
-	}
+//	@Override
+//	public void run() {
+//		while (true) {
+//			for (int i = 0; i < floorCnt; i++) {
+//				if (UpState[i]) {
+//					elevatorService.ManageUpElevator(i, elevator, UpState, floorCnt, elevatorCnt);
+//				}
+//				
+//				if (DownState[i]) {
+//					elevatorService.ManageDownElevator(i, elevator, DownState, floorCnt, elevatorCnt);
+//				}
+//			}
+//		}
+//	}
 
 	public int getFloorCnt() {
 		return floorCnt;

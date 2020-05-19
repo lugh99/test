@@ -11,7 +11,7 @@ public class ElevatorServiceImp implements ElevatorService {
 	}
 
 	@Override
-	public boolean ManageDownElevator(int i, Elevator[] elevator, boolean[] DownState, int floorCnt, int elevatorCnt) {
+	public Elevator ManageDownElevator(int i, Elevator[] elevator, boolean[] DownState, int floorCnt, int elevatorCnt) {
 		int Elevator1 = 0, Elevator2 = 0, Elevator = -1;
 		int Distance1 = floorCnt;
 		int Distance2 = floorCnt;
@@ -64,11 +64,12 @@ public class ElevatorServiceImp implements ElevatorService {
 				}
 			}
 		}
-		return DownState[i];
+		if(Elevator == -1) return elevator[0];
+		return elevator[Elevator];
 	}
 
 	@Override
-	public boolean ManageUpElevator(int i, Elevator[] elevator, boolean[] UpState, int floorCnt, int elevatorCnt) {
+	public Elevator ManageUpElevator(int i, Elevator[] elevator, boolean[] UpState, int floorCnt, int elevatorCnt) {
 		int Elevator1 = 0, Elevator2 = 0, Elevator = 0;
 		int Distance1 = floorCnt;
 		int Distance2 = floorCnt;
@@ -121,7 +122,8 @@ public class ElevatorServiceImp implements ElevatorService {
 				}
 			}
 		}
-		return UpState[i];
+		if(Elevator == -1) return elevator[0];
+		return elevator[Elevator];
 	}
 
 }

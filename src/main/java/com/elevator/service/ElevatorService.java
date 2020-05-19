@@ -23,7 +23,7 @@ public interface ElevatorService {
 	 * @param DownState
 	 * @return
 	 */
-	public boolean ManageDownElevator(int i, Elevator[] elevator, boolean[] DownState, int floorCnt, int elevatorCnt);
+	public Elevator ManageDownElevator(int i, Elevator[] elevator, boolean[] DownState, int floorCnt, int elevatorCnt);
 	
 	/**
 	 * manage the up elevator
@@ -32,5 +32,5 @@ public interface ElevatorService {
 	 * @param UpState
 	 * @return
 	 */
-	public boolean ManageUpElevator(int i, Elevator[] elevator, boolean[] UpState, int floorCnt, int elevatorCnt);
+	public Elevator ManageUpElevator(int i, Elevator[] elevator, boolean[] UpState, int floorCnt, int elevatorCnt);
 }

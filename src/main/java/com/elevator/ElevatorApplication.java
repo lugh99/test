@@ -12,14 +12,21 @@ import com.elevator.controller.ElevatorController;
  */
 public class ElevatorApplication {
 	public static void main(String[] args) {
-		ElevatorController managerUI = new ElevatorController(20, 6);//create 20 floors and 6 elevators
-		managerUI.addWindowListener(new WindowAdapter() {
+		ElevatorController elevatorController = new ElevatorController(20, 6);//create 20 floors and 6 elevators
+		elevatorController.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
 		});
-		managerUI.setSize(944, 573);
-		managerUI.setVisible(true);
+		elevatorController.setSize(944, 573);
+		elevatorController.setVisible(true);
+		
+		//press the button
+		elevatorController.runElevator();
+		//open the door
+		elevatorController.OpenDoor();
+		//close the door
+		elevatorController.closeDoor();
 	}
 
 }
