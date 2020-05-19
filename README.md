@@ -6,13 +6,13 @@
 1、项目目录架构：
 =
     Elevator
-    ├─entity 电梯实体包
+    ├─entity 实体包
     │  └─Elevator 电梯实体类
     │
-    ├─manager 管理界面包
-    │  └─ManagerUI 管理界面UI类
+    ├─controller 服务控制包
+    │  └─ElevatorController 电梯控制类
     │
-    ├─service 请求访问模块
+    ├─service 服务接口包
     │  ├─ElevatorService 电梯接口类
 	│  ├─DoorService 电梯门接口类
     │  └─imp 接口实现包
