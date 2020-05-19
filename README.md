@@ -14,8 +14,10 @@
     │
     ├─service 请求访问模块
     │  ├─ElevatorService 电梯接口类
+	│  ├─DoorService 电梯门接口类
     │  └─imp 接口实现包
-    │     └─ElevatorServiceImp 电梯接口实现类
+    │     ├─ElevatorServiceImp 电梯接口实现类
+	│     └─DoorServiceImp 电梯门接口实现类
     │
     └─ElevatorApplication 主程序启动类
 2、应用算法原理：
