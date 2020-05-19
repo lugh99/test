@@ -1,3 +1,6 @@
+运行效果预览：
+    ![image](https://github.com/lugh99/test/blob/master/elevator.png)
+	
 1、项目目录架构：
 =
     Elevator
@@ -30,6 +33,4 @@
 =
     1）直接运行主程序类：ElevatorApplication.java
     2) 命令执行已经打好的jar包，在resources/jar下面，执行命令：java -jar 目录/elevator.jar
-4、运行效果预览：
-=
-    ![image](https://github.com/lugh99/test/blob/master/elevator.png)
+
