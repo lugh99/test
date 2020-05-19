@@ -32,4 +32,4 @@
     2) 命令执行已经打好的jar包，在resources/jar下面，执行命令：java -jar 目录/elevator.jar
 4、运行效果预览：
 =
-    ![image](https://github.com/lugh99/test/src/main/resources/img/elevator.png)
+    ![image](https://github.com/test/elevator.png)
