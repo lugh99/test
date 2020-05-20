@@ -3,7 +3,7 @@
 运行效果预览：
     ![image](https://github.com/lugh99/test/blob/master/elevator.png)
 	
-1、项目目录架构：
+1、项目目录结构：
 =
     Elevator
 	  ├─main
