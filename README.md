@@ -7,22 +7,23 @@
 =
     Elevator
 	  ├─main
-	  │	  ├─entity 实体包
-	  │	  │  └─Elevator 电梯实体类
-	  │	  │
-	  │	  ├─controller 服务控制包
-	  │	  │  └─ElevatorController 电梯控制类
-	  │	  │
-	  │	  ├─service 服务接口包
-	  │	  │  ├─ElevatorService 电梯接口类
-	  │	  │  ├─DoorService 电梯门接口类
-	  │	  │  └─imp 接口实现包
-	  │	  │     ├─ElevatorServiceImp 电梯接口实现类
-	  │	  │     └─DoorServiceImp 电梯门接口实现类
-	  │	  │
-	  │	  └─ElevatorApplication 主程序启动类
+	  │	 ├─entity 实体包
+	  │	 │  └─Elevator 电梯实体类
+	  │	 │
+	  │	 ├─controller 服务控制包
+	  │	 │  └─ElevatorController 电梯控制类
+	  │	 │
+	  │	 ├─service 服务接口包
+	  │	 │  ├─ElevatorService 电梯接口类
+	  │	 │  ├─DoorService 电梯门接口类
+	  │	 │  └─imp 接口实现包
+	  │	 │     ├─ElevatorServiceImp 电梯接口实现类
+	  │	 │     └─DoorServiceImp 电梯门接口实现类
+	  │	 │
+	  │	 └─ElevatorApplication 主程序启动类
+	  │
 	  └─test  测试包
-	      └─ElevatorTest 测试类
+	     └─ElevatorTest 测试类
 2、应用算法原理：
 =
     实现时把电梯分为五个状态：
